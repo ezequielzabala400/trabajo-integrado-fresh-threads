@@ -1,0 +1,74 @@
+
+.sobre-nosotros{
+    min-height: 800px;
+    background: rgb(0,189,157);
+background: linear-gradient(180deg, $VerdeAgua1 92%, $Celeste1 100%);
+}
+
+.sobre-nosotros__top{
+    padding-top: 90px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $Blanco;
+
+    h2{
+        font-size: 3.4rem;
+        font-family: $Titulo2;
+        font-weight: 900;
+        color: $Negro;
+    }
+
+    p{
+        text-align: center;
+        max-width: 660px;
+        font-size: 1.2rem;
+        font-family: $Texto;
+        span{
+            font-weight: 900;
+            color: $Violeta;
+            font-family: $Titulo1;
+        }
+    }
+}
+
+.sobre-nosotros__bottom{
+    padding-top: 90px;
+    padding-bottom: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+        font-size: 2.6rem;
+        font-family: $Titulo2;
+        font-weight: 900;
+    }
+}
+
+.sobre-nosotros__contenedor-cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.sobre-nosotros__card{
+    width: 300px;
+
+    i{
+        font-size: 6rem;
+        color: $Violeta;
+    }
+    p{
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: $Negro;
+        font-family: $Texto;
+    }
+}

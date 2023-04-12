@@ -1,0 +1,61 @@
+
+.hero{
+    background-image: url(../../assets/img/clothes-7721703_1920.jpg);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    // background: rgb(9,204,191);
+    // background: linear-gradient(180deg, rgba(9,204,191,1) 92%, rgba(0,189,157,1) 100%);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    h1{
+        color: $Blanco;
+        text-shadow: 0px 10px 20px $Violeta;
+        max-width: 450px;
+        font-size: 2.5rem;
+        font-family: $Titulo1;
+        -webkit-animation: fade-in 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        span{
+            font-family: $Titulo1;
+        }
+        }
+
+    p{
+        font-weight: 900;
+        color: red;
+        font-family: $SubTitulo;
+        text-transform: capitalize;
+        -webkit-animation: fade-in 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.8s both;
+	        animation: fade-in 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.8s both;
+    }
+
+    img{
+        height: 60%;
+        width: 60%;
+        -webkit-animation: slide-in-right 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-right 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        border-radius: 50%;
+    }
+
+    
+}
+
+.hero__info{
+    max-width: 360px;
+}
+
+.hero__btn, .hero__btn:hover{
+    -webkit-animation: fade-in 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.2s both;
+	        animation: fade-in 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.2s both;
+    background-color: $Violeta;
+    a{
+        color: $Blanco;
+    }
+}

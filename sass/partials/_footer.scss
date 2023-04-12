@@ -1,0 +1,47 @@
+
+footer{
+    padding: 20px;
+    background-color: $Violeta;
+
+    ul{
+        margin-top: 60px;
+
+        a{
+            color: white;
+            font-weight: 900;
+            font-size: 17px;
+        }
+    }
+
+    span{
+        color: $Gris;
+    }
+}
+
+.footer__top{
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer__top__icons{
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    a{
+        color: $Gris;
+        font-size: 20px;
+        transition: color 0.5s;
+
+        &:hover{
+            color: $Blanco;
+            transition: all 0.5s;
+        }
+    }
+}

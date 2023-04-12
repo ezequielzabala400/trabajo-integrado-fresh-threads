@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    ::-webkit-scrollbar{
+        background-color: $Violeta;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: $Blanco;
+        border-radius: 30px;
+        &:hover{
+            background-color: $Celeste2;
+        }
+    }
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+
+main{
+    margin-top: 90px;
+    min-height: 100vh;
+    width: 100%;
+}

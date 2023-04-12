@@ -1,0 +1,128 @@
+@import './variables.scss';
+
+nav{
+    height: 90px;
+    background-color: $Violeta;
+    color: $Blanco;
+    i{
+        font-size: 2rem;
+    }
+    -webkit-box-shadow: 0px 7px 11px 0px rgba(70,56,166,0.6); 
+box-shadow: 0px 7px 11px 0px rgba(70,56,166,0.6);
+}
+
+.navbar__logo{
+    height: 70px;
+}
+
+.navbar__toggle-menu{
+    background-color: transparent;
+    color: $Blanco;
+    border: none;
+}
+
+.navbar__menu{
+    background-color: $Violeta;
+    color: $Blanco;
+
+    a{
+        color: $Gris;
+        font-size: 20px;
+        &:hover{
+            color: $Blanco;
+        }
+    }
+}
+
+.navbar__menu__title{
+    font-size: 28px;
+}
+
+.cross{
+    cursor: pointer;
+}
+
+.navbar__carrito{
+    background-color: $Violeta;
+    color: $Blanco;
+}
+
+.menu-body__top{
+    height: 90%;
+    width: 100%;
+    overflow-y: scroll;
+    
+}
+
+.menu-body__top__productos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.separador{
+    width: 90%;
+    height: 2px;
+    background-color: $Blanco;
+    margin: auto;
+}
+
+.menu-body__bottom{
+    height: 26%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    button{
+        width: 90%;
+        margin: 20px;
+    }
+}
+
+.menu-body__bottom__total{
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    font-size: 20px;
+    font-weight: 700;
+    p{
+        margin: unset;
+    }
+}
+
+.carrito-producto{
+    position: relative;
+
+    img{
+        height: 100%;
+        object-fit: cover;
+    }
+
+    i{
+        position: absolute;
+        right: 0;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0 6px 6px 0;
+    }
+
+
+    button, button:hover{
+        background-color: $Violeta;
+        color: $Blanco;
+    }
+}
+
+.carrito-producto__titulo{
+    width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

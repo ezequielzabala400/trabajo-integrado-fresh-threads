@@ -1,0 +1,85 @@
+
+.contacto{
+    margin-top: 90px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #252525;
+    color: white;
+}
+
+.contacto-contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.contacto__faqs{
+    padding-top: 30px;
+    height: 100%;
+    width: 400px;
+    align-self: flex-start;
+
+    h2{
+        text-align: center;
+    }
+
+    .accordion-item{
+        color: white;
+        background-color: $Violeta;
+    }
+
+    button, button:focus{
+        background-color: $Violeta;
+        color: $Blanco;
+    }
+}
+
+.contacto-form{
+    background-color: rgb(23, 23, 23);
+    border: 2px solid $Blanco;
+    padding: 30px;
+    min-height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+
+    small{
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
+
+.btn--contacto{
+    background-color: $Violeta;
+    color: $Blanco;
+    font-weight: 700;
+    &:hover, &:active{
+    background-color: $Violeta;
+    }
+}
+
+
+
+.error{
+    border: 3px solid red;
+}
+
+.input-contenedor{
+    height: 60px;
+}
+
+.btn--modal, .btn--modal:hover{
+    background-color: $Violeta;
+    color: $Blanco;
+}

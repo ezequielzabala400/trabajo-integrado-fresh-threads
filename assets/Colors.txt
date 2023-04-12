@@ -1,0 +1,7 @@
+#49C6E5 Celeste 1
+#54DEFD Celeste 2
+#FFFBFA Blanco
+#00BD9D Verde Agua
+#8BD7D2 Verde Agua 2
+#4638A6 Violeta
+#877DF3 Lila

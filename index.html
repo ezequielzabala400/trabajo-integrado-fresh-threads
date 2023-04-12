@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <!-- Title -->
+    <title>Fresh Threads</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top">
+      <div class="container-fluid d-flex align-items-center">
+        <!-- navbar-brand -->
+        <img class="navbar__logo order-1" src="./assets/img/Logo.png" alt="" />
+        <button
+          class="navbar-toggler navbar__toggle-menu"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-list"></i>
+        </button>
+        <!-- Menu -->
+        <div
+          class="offcanvas offcanvas-start navbar__menu"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5
+              class="offcanvas-title navbar__menu__title"
+              id="offcanvasNavbarLabel"
+            >
+              Menú
+            </h5>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+            <i
+              class="bi bi-x-lg cross"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></i>
+          </div>
+          <div class="offcanvas-body gap-2">
+            <ul class="navbar-nav flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#hero">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#productos">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button
+          class="navbar-toggler navbar__toggle-menu order-3 border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasMenu"
+          aria-controls="offcanvasMenu"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-cart"></i>
+        </button>
+        <!-- Carrito -->
+        <div
+          class="offcanvas offcanvas-end navbar__carrito"
+          tabindex="-1"
+          id="offcanvasMenu"
+          aria-labelledby="offcanvasMenuLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasMenuLabel">Carrito</h5>
+            <i
+              class="bi bi-x-lg cross"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></i>
+          </div>
+          <div class="offcanvas-body d-flex flex-column align-items-center">
+            <div class="menu-body__top">
+              <div class="menu-body__top__productos">
+                <div class="carrito-lista-productos">
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separador">
+
+            </div>
+            <div class="menu-body__bottom">
+              <div class="menu-body__bottom__total">
+                <p>Total:</p>
+                <span id="total-carrito">$0</span>
+              </div>
+              <button class="btn btn-dark">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <!-- Hero -->
+      <section class="container-fluid hero" id="hero">
+        <div
+          class="d-flex justify-content-center align-items-center flex-column flex-lg-row"
+        >
+          <div class="">
+            <h1>Refresca tu armario y vive la moda con <span>Fresh Threads</span></h1>
+            <p class="hero__info">
+              Tu destino para la moda fresca y actualizada en línea
+            </p>
+          <button class="btn hero__btn"><a href="#productos">Nuestros Productos</a></button>
+
+          </div>
+          <img src="./assets/img/favicon.png" alt="Logo" />
+        </div>
+      </section>
+      <!-- Sobre Nosotros -->
+      <section class="container-fluid sobre-nosotros" id="sobre-nosotros">
+        <div class="sobre-nosotros__top">
+          <h2>Sobre Nosotros</h2>
+          <p>
+            <span>Fresh Threads</span> es una tienda digital de ropa que se enfoca en ofrecer
+            prendas frescas y modernas para aquellos que buscan mantenerse
+            <span>actualizados</span> en las <span>últimas tendencias</span> de la moda. Con una amplia
+            selección de ropa de calidad y <span>diseños únicos</span>, <span>Fresh Threads</span> es el
+            destino perfecto para aquellos que buscan refrescar su estilo y
+            <span>destacar</span> entre la multitud. Además, su plataforma de compras en
+            línea fácil de usar y su atención al cliente de <span>alta calidad</span>
+            garantizan una experiencia de compra en línea sin complicaciones.
+          </p>
+        </div>
+        <div class="sobre-nosotros__bottom">
+          <h2>Benificios</h2>
+          <div class="sobre-nosotros__contenedor-cards">
+            <div class="sobre-nosotros__card">
+              <i class="bi bi-clock-history"></i>
+              <p>Atención las 24 Hs</p>
+            </div>
+            <div class="sobre-nosotros__card">
+              <i class="bi bi-bus-front-fill"></i>
+              <p>Envios a todo el país</p>
+            </div>
+            <div class="sobre-nosotros__card">
+              <i class="bi bi-tag"></i>
+              <p>Ofertas todas las semanas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Productos -->
+      <section class="container-fluid text-center" id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="p-5 d-flex align-baseline gap-3 flex-column flex-lg-row">
+          <h3>Categorías</h3>
+          <div
+            class="d-flex align-baseline gap-3 flex-column flex-lg-row"
+            id="contenedor__btn--categorias"
+          >
+            <button
+              type="button"
+              class="btn btn--categorias btn--categorias--activo"
+              data-id="all"
+            >
+              Todas
+            </button>
+            <button
+              type="button"
+              class="btn btn--categorias"
+              data-id="men's clothing"
+            >
+              Hombre
+            </button>
+            <button
+              type="button"
+              class="btn btn--categorias"
+              data-id="women's clothing"
+            >
+              Mujer
+            </button>
+            <button
+              type="button"
+              class="btn btn--categorias"
+              data-id="jewelery"
+            >
+              Joyería
+            </button>
+          </div>
+        </div>
+        <div class="productos-contenedor"></div>
+        <button class="btn btn-light mt-5" id="ver-mas">Ver más</button>
+      </section>
+      <!-- Reseñas -->
+      <section class="container-fluid" id="reseñas">
+        <h2>Reseñas</h2>
+        <div class="reseñas__cards-contenedor">
+          <div class="reseñas__card">
+            <img src="./assets/img/usuarios/user1.jpg" alt="" />
+            <h3>Sarah García</h3>
+            <p class="text-center">
+              "Amo comprar en Fresh Threads. Su selección de ropa fresca y
+              moderna es insuperable, y siempre encuentro algo que me encanta.
+              Además, su atención al cliente es excelente y siempre se aseguran
+              de que mi experiencia de compra sea excelente."
+            </p>
+          </div>
+          <div class="reseñas__card">
+            <img src="./assets/img/usuarios/user2.jpg" alt="" />
+            <h3>David Pérez</h3>
+            <p class="text-center">
+              "¡Fresh Threads es increíble! Su ropa de alta calidad es perfecta
+              para aquellos que quieren destacar en un mar de personas vestidas
+              igual. Además, sus precios son muy razonables y siempre encuentro
+              ofertas impresionantes. ¡Recomiendo altamente Fresh Threads!"
+            </p>
+          </div>
+          <div class="reseñas__card">
+            <img src="./assets/img/usuarios/user3.jpg" alt="" />
+            <h3>Emily González</h3>
+            <p class="text-center">
+              "Desde que descubrí Fresh Threads, he estado completamente
+              obsesionado con su ropa fresca y moderna. Siempre encuentro algo
+              nuevo y emocionante en su sitio web, y sus precios son bastante
+              asequibles. ¡Recomiendo encarecidamente Fresh Threads para
+              cualquier persona que quiera un estilo único y moderno!"
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <div class="footer__top">
+        <div class="footer__top__icons">
+          <a href="#"><i class="bi bi-envelope"></i> Correo</a>
+          <a href="#"><i class="bi bi-whatsapp"></i> 555-5555-5555</a>
+          <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
+          <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26014.71901016575!2d-68.33407529285758!3d-54.80812207622793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4c22b5bad109bf%3A0x5498473dba43ebfc!2sUshuaia%2C%20Tierra%20del%20Fuego!5e0!3m2!1ses!2sar!4v1681159220086!5m2!1ses!2sar"
+          width="400"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <ul class="d-flex justify-content-center align-items-center gap-5">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Soporte</a></li>
+      </ul>
+      <span class="d-flex align-items-center justify-content-center"
+        >Hecho con ❤ por Grupo F</span
+      >
+    </footer>
+
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/api-info.js"></script>
+    <script src="./js/productos.js"></script>
+    <script src="./js/productos-carrito.js"></script>
+  </body>
+</html>
