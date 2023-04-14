@@ -13,13 +13,13 @@ const renderizarProducto = ({ id, title, image, price, description}) => {
                   <p class="card-text card__info" title="${description}">${description}</p>
                   <div class="d-flex justify-content-between pb-4">
                     <label>Elegí tu talle:</label>
-                    <select name="" id="" class="d-block bg-black text-light rounded-2 w-50">
-                      <option value="">...</option>
-                      <option value="S">S</option>
-                      <option value="M">M</option>
-                      <option value="L">L</option>
-                      <option value="XL">XL</option>
-                      <option value="XXL">XXL</option>
+                    <select name="talle" id="" class="d-block bg-black text-light rounded-2 w-50">
+                      <option name="talle" value="">...</option>
+                      <option name="talle" value="S">S</option>
+                      <option name="talle" value="M">M</option>
+                      <option name="talle" value="L">L</option>
+                      <option name="talle" value="XL">XL</option>
+                      <option name="talle" value="XXL">XXL</option>
                     </select>
                     
 
@@ -72,7 +72,6 @@ const mostrarMasBtn = (id = 'all') => {
 const mostrarProductosPorCategoria = async (id) => {
   const productos = await filtrarProductos();
   const productosCategoria = productos.filter(producto => producto.category == id);
-  console.log(productosCategoria);
   productosContenedor.innerHTML = productosCategoria.map(producto => renderizarProducto(producto)).join('');
 }
 
@@ -98,15 +97,15 @@ const seleccionarCategoria = (e) => {
 const agregarProductoCarrito = (e) => {
   const {producto} = e.target.dataset;
   const productoSeleccionado = productosPartes.find(productoElemento => productoElemento.id === parseInt(producto))
+  productoSeleccionado.total = 1;
   productoCarrito.push(productoSeleccionado);
   mostrarProductoCarrito();
   guardarAlLocalStorage(productoCarrito);
-  console.log(productoCarrito);
+  cargarBtnsBorrarProducto();
 }
 
 const cargarBtnsProductoCarrito = () => {
   const agregarBtns = document.querySelectorAll('.btn-agregar');
-  console.log(agregarBtns);
   agregarBtns.forEach(btn => {
     btn.addEventListener('click', agregarProductoCarrito);
   })

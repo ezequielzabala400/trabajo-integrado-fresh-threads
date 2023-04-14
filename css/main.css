@@ -118,15 +118,26 @@ nav {
     font-size: 20px;
     cursor: pointer;
     padding: 0 6px 6px 0; }
-  .carrito-producto button, .carrito-producto button:hover {
-    background-color: #4638A6;
-    color: #FFFBFA; }
 
 .carrito-producto__titulo {
   width: 160px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
+
+.btn-restar, .btn-sumar {
+  background-color: #4638A6;
+  color: #FFFBFA; }
+  .btn-restar:hover, .btn-sumar:hover {
+    background-color: #4638A6;
+    color: #FFFBFA; }
+
+.btn-restar--limite {
+  background-color: #808080;
+  color: #000000; }
+  .btn-restar--limite:hover {
+    background-color: #808080;
+    color: #000000; }
 
 .hero {
   background-image: url(../../assets/img/clothes-7721703_1920.jpg);
@@ -365,7 +376,8 @@ footer {
   height: 170px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  font-family: "Kalam", cursive; }
   .footer__top__icons a {
     color: #b6b6b6;
     font-size: 20px;
@@ -471,3 +483,58 @@ footer {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     opacity: 1; } }
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+    .hero img {
+      display: none; }
+  .hero-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center; }
+  .sobre-nosotros__top h2 {
+    font-size: 2.6rem; }
+  .sobre-nosotros__top p {
+    max-width: 500px;
+    font-size: 1rem; }
+  .sobre-nosotros__bottom h2 {
+    font-size: 2rem; }
+  .sobre-nosotros__card i {
+    font-size: 4rem; }
+  .sobre-nosotros__card p {
+    font-size: 1rem; }
+  .reseñas__card img {
+    height: 80px;
+    width: 80px; }
+  .reseñas__card h3 {
+    font-size: 1.6rem; }
+  .reseñas__card p {
+    font-size: 0.8rem; } }
+
+@media (max-width: 768px) {
+  .sobre-nosotros__contenedor-cards {
+    flex-direction: column;
+    gap: 40px; }
+  .reseñas__cards-contenedor {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; }
+  .reseñas__card {
+    gap: 10px;
+    margin-bottom: 10px; }
+  .footer__top iframe {
+    height: 200px;
+    width: 300px; } }
+
+@media (max-width: 578px) {
+  .footer__top {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .btn--contacto {
+    text-align: center; } }

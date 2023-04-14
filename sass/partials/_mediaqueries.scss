@@ -1,0 +1,95 @@
+@media (max-width: 1024px) {
+    .hero{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        img{
+            display: none;
+        }
+    }
+
+    .hero-contenido{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .sobre-nosotros__top{
+        h2{
+            font-size: 2.6rem;
+        }
+        p{
+            max-width:500px;
+            font-size: 1rem;
+        }
+    }
+
+    .sobre-nosotros__bottom{
+        h2{
+            font-size: 2rem;
+        }
+    }
+
+    .sobre-nosotros__card{
+        i{
+            font-size: 4rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+
+    .reseñas__card{
+        img{
+            height: 80px;
+            width: 80px;
+        }
+
+        h3{
+            font-size: 1.6rem;
+        }
+        p{
+            font-size: 0.8rem;
+        }
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .sobre-nosotros__contenedor-cards{
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .reseñas__cards-contenedor{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .reseñas__card{
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .footer__top{
+        iframe{
+            height: 200px;
+            width: 300px;
+        }
+    }
+}
+
+@media (max-width: 578px){
+    .footer__top{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn--contacto{
+        text-align: center;
+    }
+}

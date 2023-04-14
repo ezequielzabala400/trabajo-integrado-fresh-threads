@@ -102,12 +102,12 @@ const enviarFormulario = (e) => {
     if(formularioValido){
         // btnForm.setAttribute('data-bs-toggle', 'modal');
         // btnForm.setAttribute('data-bs-target', '#exampleModal')
-        alert('El formulario se envió con exito :D')
+        alertify.alert('El formulario se envió con exito :D').set('modal', true); 
 
         // data-bs-toggle="modal" data-bs-target="#exampleModal"
         setTimeout(() => {
             location.reload()
-        }, 500);
+        }, 3000);
     }
     
 }
