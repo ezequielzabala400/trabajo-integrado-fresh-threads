@@ -34,10 +34,14 @@ const renderizarProducto = ({ id, title, image, price, description}) => {
 }
 
 const productosPartes = [];
+
+
 let productosControles = {
     tamanio: 6,
     comienzo: 0
 }
+
+
 const mostrarProductos = async (tamanio = 6, comienzo = 0) => {
     const productos = await filtrarProductos();
     for(let i = comienzo; i < tamanio; i++){

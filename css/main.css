@@ -140,11 +140,8 @@ nav {
     color: #000000; }
 
 .hero {
-  background-image: url(../../assets/img/clothes-7721703_1920.jpg);
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-size: cover;
-  object-fit: contain;
+  background: #ffbc10;
+  background: linear-gradient(180deg, #ffbc10 92%, #fe9d00 100%);
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -187,8 +184,8 @@ nav {
 
 .sobre-nosotros {
   min-height: 800px;
-  background: #00bd9d;
-  background: linear-gradient(180deg, #00BD9D 92%, #49C6E5 100%); }
+  background: #fe9d00;
+  background: linear-gradient(180deg, #fe9d00 92%, #49c6e5 100%); }
 
 .sobre-nosotros__top {
   padding-top: 90px;
@@ -508,6 +505,10 @@ footer {
     font-size: 4rem; }
   .sobre-nosotros__card p {
     font-size: 1rem; }
+  .reseñas__cards-contenedor {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; }
   .reseñas__card img {
     height: 80px;
     width: 80px; }
@@ -517,13 +518,12 @@ footer {
     font-size: 0.8rem; } }
 
 @media (max-width: 768px) {
+  .carrito-producto i {
+    color: black;
+    font-size: 26px; }
   .sobre-nosotros__contenedor-cards {
     flex-direction: column;
     gap: 40px; }
-  .reseñas__cards-contenedor {
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center; }
   .reseñas__card {
     gap: 10px;
     margin-bottom: 10px; }

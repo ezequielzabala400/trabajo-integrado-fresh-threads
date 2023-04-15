@@ -24,7 +24,7 @@ const renderizarProductoCarrito = ({title, image, id, total}) => {
                           <p class="card-text">Talle: Xl</p>
                           <div data-contenedor="${id}" class="card-text d-flex justify-content-center align-items-center gap-3 btn-carrito-contenedor">
                             <button class="btn btn-restar btn-restar--limite">-</button>
-                            <span class="cantidad">${total}</span>
+                            <span class="cantidad-${title}">${total}</span>
                             <button class="btn btn-sumar">+</button>
 
                           </div>
@@ -35,6 +35,8 @@ const renderizarProductoCarrito = ({title, image, id, total}) => {
     `
 }
 
+
+
 const cargarBtnsSumarRestar = () => {
   const contenedorDeBotonesCarrito = document.querySelectorAll('.btn-carrito-contenedor');
   console.log(contenedorDeBotonesCarrito);
@@ -42,8 +44,8 @@ const cargarBtnsSumarRestar = () => {
     contenedor.addEventListener('click', (e) => {
       const productoCantidad = productoCarrito.find(producto => producto.id === parseInt(contenedor.dataset.contenedor));
       console.log(productoCantidad);
-      let contador = productoCantidad.total;
-      let cantidad = contenedor.querySelector('.cantidad');
+      let idCantidad = productoCantidad.title;
+      let cantidad = contenedor.querySelector(`.cantidad-${idCantidad}`);
       const btnRestar = contenedor.querySelector('.btn-restar');
       
       
@@ -53,18 +55,28 @@ const cargarBtnsSumarRestar = () => {
           return;
         };
         btnRestar.classList.remove('btn-restar--limite');
+        productoCarrito = productoCarrito.map(producto => {
+          if(producto.id === productoCantidad.id){
+            return {...producto, total: producto.total + 1}
+          } else return producto;
+        } )
+        mostrarProductoCarrito()
 
-        
-        contador++;
-        
-        return;
       }else if(e.target.classList.contains('btn-sumar')){
         btnRestar.classList.remove('btn-restar--limite');
        
-        contador--;
+        contador++
+        cantidad.textContent += productoCantidad.total
+
       }
     })
   })
+}
+
+const addUnitToProduct = (product) => {
+  cart = cart.map(cartProduct => cartProduct.id === product.id 
+    ? {...cartProduct, quantity: cartProduct.quantity + 1} 
+    : cartProduct)
 }
 
 const mostrarProductoCarrito = () => {
