@@ -132,13 +132,6 @@ nav {
     background-color: #4638A6;
     color: #FFFBFA; }
 
-.btn-restar--limite {
-  background-color: #808080;
-  color: #000000; }
-  .btn-restar--limite:hover {
-    background-color: #808080;
-    color: #000000; }
-
 .hero {
   position: relative;
   background: #ffbc10;

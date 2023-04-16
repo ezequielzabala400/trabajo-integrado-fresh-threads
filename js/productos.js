@@ -101,11 +101,13 @@ const seleccionarCategoria = (e) => {
 const agregarProductoCarrito = (e) => {
   const {producto} = e.target.dataset;
   const productoSeleccionado = productosPartes.find(productoElemento => productoElemento.id === parseInt(producto))
+  if(productoCarrito.some(producto => producto.id === productoSeleccionado.id)) return;
   productoSeleccionado.total = 1;
   productoCarrito.push(productoSeleccionado);
   mostrarProductoCarrito();
   guardarAlLocalStorage(productoCarrito);
   cargarBtnsBorrarProducto();
+  cargarBtnsSumarRestar();
 }
 
 const cargarBtnsProductoCarrito = () => {
