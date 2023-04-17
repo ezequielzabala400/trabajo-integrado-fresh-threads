@@ -13,8 +13,7 @@ const renderizarProducto = ({ id, title, image, price, description}) => {
                   <p class="card-text card__info" title="${description}">${description}</p>
                   <div class="d-flex justify-content-between pb-4">
                     <label>Elegí tu talle:</label>
-                    <select name="talle" id="" class="d-block bg-black text-light rounded-2 w-50">
-                      <option name="talle" value="">...</option>
+                    <select name="talle" class="d-block bg-black text-light rounded-2 w-50 talle">
                       <option name="talle" value="S">S</option>
                       <option name="talle" value="M">M</option>
                       <option name="talle" value="L">L</option>
@@ -74,9 +73,11 @@ const mostrarMasBtn = (id = 'all') => {
 }
 
 const mostrarProductosPorCategoria = async (id) => {
+  
   const productos = await filtrarProductos();
   const productosCategoria = productos.filter(producto => producto.category == id);
   productosContenedor.innerHTML = productosCategoria.map(producto => renderizarProducto(producto)).join('');
+  cargarBtnsProductoCarrito();
 }
 
 const seleccionarCategoria = (e) => {
@@ -93,15 +94,27 @@ const seleccionarCategoria = (e) => {
       }else{
         mostrarProductosPorCategoria(id);
       }
-      
     }
   })
 }
 
-const agregarProductoCarrito = (e) => {
+const agregarProductoCarrito = async (e) => {
+  const btnContenedor = e.target.parentElement;
+  const productoContenedor = btnContenedor.parentElement;
+  const selectTalle = productoContenedor.querySelector('.talle');
+  
+  const listaDeProductos = await filtrarProductos();
   const {producto} = e.target.dataset;
-  const productoSeleccionado = productosPartes.find(productoElemento => productoElemento.id === parseInt(producto))
-  if(productoCarrito.some(producto => producto.id === productoSeleccionado.id)) return;
+  const productoSeleccionado = listaDeProductos.find(productoElemento => productoElemento.id === parseInt(producto))
+  if(productoCarrito.some(producto => producto.id === productoSeleccionado.id)) {
+    Swal.fire({
+      icon: 'info',
+      title: 'Oops...',
+      text: 'El producto ya está en el carrito.'
+    })
+    return;
+  };
+  productoSeleccionado.talle = selectTalle.value;
   productoSeleccionado.total = 1;
   productoCarrito.push(productoSeleccionado);
   mostrarProductoCarrito();

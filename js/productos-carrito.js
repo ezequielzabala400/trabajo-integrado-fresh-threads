@@ -10,7 +10,7 @@ const guardarAlLocalStorage = (array) => {
 
 
 
-const renderizarProductoCarrito = ({title, image, id, total}) => {
+const renderizarProductoCarrito = ({title, image, id, total, talle}) => {
     return`
     <div class="card mb-3 carrito-producto bg-black text-light" style="max-width: 540px;">
                     <i class="bi bi-trash3 borrar-producto" data-deleteId="${id}"></i>
@@ -21,7 +21,7 @@ const renderizarProductoCarrito = ({title, image, id, total}) => {
                       <div class="col-md-8">
                         <div class="card-body">
                           <h5 class="card-title carrito-producto__titulo">${title}</h5>
-                          <p class="card-text">Talle: Xl</p>
+                          <p class="card-text">Talle: ${talle}</p>
                           <div data-contenedor="${id}" class="card-text d-flex justify-content-center align-items-center gap-3 btn-carrito-contenedor">
                             <button data-btn="${id}"class="btn btn-restar">-</button>
                             <span class="cantidad">${total}</span>
@@ -108,20 +108,58 @@ const cargarBtnsBorrarProducto = () => {
 }
 
 const borrarProductoCarrito = (e) => {
-  let idProducto = parseInt(e.target.dataset.deleteid);
-  productoCarrito = productoCarrito.filter(producto => producto.id !== idProducto)
-  mostrarProductoCarrito();
-  guardarAlLocalStorage(productoCarrito);
-  cargarBtnsBorrarProducto();
-  cargarBtnsSumarRestar();
+  Swal.fire({
+    title: '¿Desea eliminar el producto?',
+    text: "El producto será removido de la lista",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#4638A6',
+    cancelButtonColor: '#000000',
+    confirmButtonText: 'Eliminar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let idProducto = parseInt(e.target.dataset.deleteid);
+      productoCarrito = productoCarrito.filter(producto => producto.id !== idProducto)
+      mostrarProductoCarrito();
+      guardarAlLocalStorage(productoCarrito);
+      cargarBtnsBorrarProducto();
+      cargarBtnsSumarRestar();
+      Swal.fire(
+        'Eliminado!',
+        'El producto se quitó de la lista.',
+        'success'
+      )
+    }
+  })
 }
 
 
 
 const comprarProductos = () => {
-  productoCarrito = [];
-  mostrarProductoCarrito();
-  guardarAlLocalStorage(productoCarrito);
+  Swal.fire({
+    title: '¿Quiere finalizar la compra?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#4638A6',
+    cancelButtonColor: '#000000',
+    confirmButtonText: 'Comprar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      console.log('Los productos comprados son:');
+      console.log(productoCarrito);
+      productoCarrito = [];
+      mostrarProductoCarrito();
+      guardarAlLocalStorage(productoCarrito);
+      Swal.fire(
+        'Compra finalizada',
+        'Muchas gracias por la compra y que lo disfrute :D.',
+        'success'
+      )
+    }
+  })
+
 }
 
 

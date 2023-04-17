@@ -102,8 +102,11 @@ const enviarFormulario = (e) => {
     if(formularioValido){
         // btnForm.setAttribute('data-bs-toggle', 'modal');
         // btnForm.setAttribute('data-bs-target', '#exampleModal')
-        alertify.alert('El formulario se envió con exito :D').set('modal', true); 
-
+        Swal.fire({
+            icon: 'success',
+            title: 'Perfecto!',
+            text: 'El formulario se envió con exito :D',
+          })
         // data-bs-toggle="modal" data-bs-target="#exampleModal"
         setTimeout(() => {
             location.reload()

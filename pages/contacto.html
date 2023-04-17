@@ -12,11 +12,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
-    <!-- Alertify Js -->
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
     <!-- Title -->
     <title>Fresh Threads</title>
 </head>
@@ -25,7 +20,7 @@
      <nav class="navbar fixed-top">
         <div class="container-fluid d-flex align-items-center">
           <!-- navbar-brand -->
-          <img class="navbar__logo order-1" src="./assets/img/Logo.png" alt="">
+          <img class="navbar__logo order-1" src="../assets/img/Logo.png" alt="">
           <button class="navbar-toggler navbar__toggle-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <i class="bi bi-list"></i>
           </button>
@@ -42,10 +37,10 @@
                   <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a>
+                  <a class="nav-link" href="../index.html">Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#productos">Productos</a>
+                  <a class="nav-link" href="../index.html">Productos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Contacto</a>
@@ -55,22 +50,9 @@
             </div>
           </div>
           <button class="navbar-toggler navbar__toggle-menu order-3 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" aria-label="Toggle navigation">
-            <i class="bi bi-cart"></i>
+            <a href="../index.html" class="text-light"><i class="bi bi-cart"></i></a>
           </button>
-          <!-- Carrito -->
-          <div class="offcanvas offcanvas-end navbar__carrito" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasMenuLabel">Carrito</h5>
-              <i class="bi bi-x-lg cross" data-bs-dismiss="offcanvas" aria-label="Close"></i>
-              
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav flex-grow-1 pe-3">
-                
-              </ul>
-              
-            </div>
-          </div>
+          
         </div>
       </nav>
       <!-- Contacto -->
@@ -205,7 +187,7 @@
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26014.71901016575!2d-68.33407529285758!3d-54.80812207622793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4c22b5bad109bf%3A0x5498473dba43ebfc!2sUshuaia%2C%20Tierra%20del%20Fuego!5e0!3m2!1ses!2sar!4v1681159220086!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <ul class="d-flex justify-content-center align-items-center gap-5">
-          <li><a href="#">Inicio</a></li>
+          <li><a href="../index.html">Inicio</a></li>
           <li><a href="#">Contacto</a></li>
           <li><a href="#">Soporte</a></li>
         </ul>
@@ -215,7 +197,9 @@
 
   <!-- Bootstrap js -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./js/utils.js"></script>
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Js -->
   <script src="../js/contacto.js"></script>
 </body>
 </html>
