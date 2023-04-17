@@ -121,6 +121,7 @@ const agregarProductoCarrito = async (e) => {
   guardarAlLocalStorage(productoCarrito);
   cargarBtnsBorrarProducto();
   cargarBtnsSumarRestar();
+  mostrarBurbuja();
 }
 
 const cargarBtnsProductoCarrito = () => {

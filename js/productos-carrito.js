@@ -1,6 +1,8 @@
 const carritoListaProductos = document.querySelector('.carrito-lista-productos');
 const totalCarrito = document.getElementById('total-carrito');
 const comprarBtn = document.getElementById('comprar-btn');
+const burbujaCarrito = document.querySelector('.burbuja-carrito');
+
 
 let productoCarrito = JSON.parse(localStorage.getItem('productosCarrito')) || [];
 
@@ -125,6 +127,7 @@ const borrarProductoCarrito = (e) => {
       guardarAlLocalStorage(productoCarrito);
       cargarBtnsBorrarProducto();
       cargarBtnsSumarRestar();
+      mostrarBurbuja();
       Swal.fire(
         'Eliminado!',
         'El producto se quitó de la lista.',
@@ -137,6 +140,15 @@ const borrarProductoCarrito = (e) => {
 
 
 const comprarProductos = () => {
+  if(productoCarrito.length === 0){
+    Swal.fire(
+      'Error',
+      'El carrito está vacío',
+      'error'
+    )
+    return;
+  }
+
   Swal.fire({
     title: '¿Quiere finalizar la compra?',
     icon: 'warning',
@@ -152,6 +164,7 @@ const comprarProductos = () => {
       productoCarrito = [];
       mostrarProductoCarrito();
       guardarAlLocalStorage(productoCarrito);
+      mostrarBurbuja();
       Swal.fire(
         'Compra finalizada',
         'Muchas gracias por la compra y que lo disfrute :D.',
@@ -159,10 +172,19 @@ const comprarProductos = () => {
       )
     }
   })
-
 }
 
+const mostrarBurbuja = () => {
+  if(productoCarrito.length < 1){
+    burbujaCarrito.classList.remove('mostrar-burbuja');
+    burbujaCarrito.textContent = productoCarrito.length;
+  }else {
+    burbujaCarrito.classList.add('mostrar-burbuja');
+    burbujaCarrito.textContent = productoCarrito.length;
+  }
+}
 
+mostrarBurbuja();
 mostrarProductoCarrito();
 
 window.addEventListener('DOMContentLoaded', cargarBtnsBorrarProducto)
